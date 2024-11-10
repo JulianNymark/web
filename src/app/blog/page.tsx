@@ -24,15 +24,14 @@ const Render = () => {
         </Text>
         <Text>
           Then I could write and write with nary the slightest worry in the
-          world! For one, the quite possibly random content doesn&apos;t get
-          committed to a VCS, so that&apos;s nice (in case I say something
-          incredibly stupid and want to easily retract my words! I could always
-          force push... hmmm, there truly is a world of opportunity out there).
-          On the other hand, storing the content in a VCS will also let me time
-          travel!
+          world! For one, the quite possibly random content doesn't get
+          committed to a VCS, so that's nice (in case I say something incredibly
+          stupid and want to easily retract my words! I could always force
+          push... hmmm, there truly is a world of opportunity out there). On the
+          other hand, storing the content in a VCS will also let me time travel!
         </Text>
         <List title="Points against CMS:">
-          <ListItem>I&apos;d have to host a CMS... {">"}:( </ListItem>
+          <ListItem>I'd have to host a CMS... {">"}:( </ListItem>
           <ListItem>
             Another moving piece of machinery! (it <s>could</s> will break at
             some point and require more maintenance)
@@ -42,13 +41,13 @@ const Render = () => {
             generate everything at build time from source 😌
           </ListItem>
           <ListItem>
-            Whenever I scaffold something &quot;bigger&quot; for the sake of
-            future unknown usage patterns, it always falls flat!
+            Whenever I scaffold something "bigger" for the sake of future
+            unknown usage patterns, it always falls flat!
           </ListItem>
           <ListItem>
             CMSes are good for dynamic data, but do I really <em>want</em> to do
-            dynamic data?! (I don&#39;t want to make my blog into a job! I just
-            want to occasionally rant into the void)
+            dynamic data?! (I don't want to make my blog into a job! I just want
+            to occasionally rant into the void)
           </ListItem>
         </List>
         <List title="Points for CMS:">
@@ -60,9 +59,7 @@ const Render = () => {
             presentation! 👏
           </ListItem>
         </List>
-        <Text>
-          I&apos;ll leave room for future me to make some choices here.
-        </Text>
+        <Text>I'll leave room for future me to make some choices here.</Text>
       </Squish>
     </VStack>
   );

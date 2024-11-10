@@ -19,8 +19,8 @@ const Header = () => {
 const Footer = () => {
   return (
     <Box background="surface-neutral-moderate" padding="8" as="footer">
-      <PageBlock gutters width="lg">
-        Thanks for checking out [website]
+      <PageBlock gutters width="lg" style={{ color: "oklch(0 0 0 / 20%)" }}>
+        a more silent footer.
       </PageBlock>
     </Box>
   );

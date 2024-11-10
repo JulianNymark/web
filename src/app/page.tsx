@@ -1,4 +1,4 @@
-import { H1, Squish, Text } from "@/components/monolith";
+import { H1, H2, Squish, Text } from "@/components/monolith";
 import { Box, Link, Stack, VStack } from "@navikt/ds-react";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 import NextLink from "next/link";
@@ -36,11 +36,11 @@ const Footer = () => {
             <Link as={NextLink} href="/about">
               About
             </Link>
-            <Link as={NextLink} href="/confusion">
-              huh?
+            <Link as={NextLink} href="https://c.im/@j_man" rel="me">
+              Mastodon
             </Link>
             <Link as={NextLink} href="https://github.com/JulianNymark/web">
-              source
+              Source
             </Link>
           </VStack>
         </Stack>
@@ -58,19 +58,24 @@ const Body = () => {
             <H1>Hello!</H1>
 
             <Text>
-              Welcome! This is one of those personal homepages! (they&apos;re
-              still a thing right?)
+              Welcome! This is one of those personal homepages! (they're still a
+              thing right?)
             </Text>
 
             <s>
               <Text>
-                It&apos;s attempted filled, through and thr<b>ough</b>, with
-                stuff that I think you think might be interesting <b>too</b>!
+                It's attempted filled, through and thr<b>ough</b>, with stuff
+                that I think you think might be interesting <b>too</b>!
               </Text>
             </s>
             <Text>
               There might not be much here right now! But just you wait...
             </Text>
+            <H2>
+              <Link as={NextLink} href="/whats-so-great-about">
+                What's so great about...
+              </Link>
+            </H2>
           </VStack>
         </Squish>
       </PageBlock>
