@@ -11,6 +11,32 @@ export const H1 = ({ children }: { children: ReactNode }) => {
   );
 };
 
+export const H2 = ({ children }: { children: ReactNode }) => {
+  return (
+    <Box marginBlock="0 4" asChild>
+      <Heading level="2" size="large">
+        {children}
+      </Heading>
+    </Box>
+  );
+};
+
+export const Squish = ({ children }: { children: ReactNode }) => {
+  return (
+    <div style={{ maxWidth: "55ch", marginBlock: "", marginInline: "auto" }}>
+      {children}
+    </div>
+  );
+};
+
 export const Text = ({ children }: { children: ReactNode }) => {
-  return <BodyLong style={{ width: "55ch" }}>{children}</BodyLong>;
+  return (
+    <BodyLong
+      style={{
+        marginBlock: "0 20px",
+      }}
+    >
+      {children}
+    </BodyLong>
+  );
 };

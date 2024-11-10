@@ -1,4 +1,4 @@
-import { H1, Text } from "@/components/monolith";
+import { H1, Squish, Text } from "@/components/monolith";
 import { Box, Link, Stack, VStack } from "@navikt/ds-react";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 import NextLink from "next/link";
@@ -9,11 +9,7 @@ const Header = () => {
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
           <Box>Welcome to [website]</Box>
-          <Stack>
-            <Link as={NextLink} href="/blog">
-              Blog
-            </Link>
-          </Stack>
+          <Stack></Stack>
         </Stack>
       </PageBlock>
     </Box>
@@ -25,8 +21,15 @@ const Footer = () => {
     <Box background="surface-neutral-moderate" padding="8" as="footer">
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
-          <Box>Thanks for checking out [website]</Box>
+          <Box style={{ maxWidth: "80ch", marginBlock: "0 20px" }}>
+            Thanks for checking out [website]!, assuming that the way most
+            people explore websites is to not look at the footer until the very
+            end of their experience.
+          </Box>
           <VStack>
+            <Link as={NextLink} href="/blog">
+              Blog
+            </Link>
             <Link as={NextLink} href="/contact">
               Contact
             </Link>
@@ -50,19 +53,26 @@ const Body = () => {
   return (
     <Box padding="8" paddingBlock="16" as="main">
       <PageBlock gutters width="lg">
-        <VStack gap="3">
-          <H1>[Put that one thing you want everyone to read here!]</H1>
+        <Squish>
+          <VStack gap="3">
+            <H1>Hello!</H1>
 
-          <Text>
-            Welcome! This is one of those personal homepages! (they&apos;re
-            still a thing right?)
-          </Text>
+            <Text>
+              Welcome! This is one of those personal homepages! (they&apos;re
+              still a thing right?)
+            </Text>
 
-          <Text>
-            It&apos;s attempted filled, through and thr<b>ough</b>, with stuff
-            that I think you think might be interesting <b>too</b>!
-          </Text>
-        </VStack>
+            <s>
+              <Text>
+                It&apos;s attempted filled, through and thr<b>ough</b>, with
+                stuff that I think you think might be interesting <b>too</b>!
+              </Text>
+            </s>
+            <Text>
+              There might not be much here right now! But just you wait...
+            </Text>
+          </VStack>
+        </Squish>
       </PageBlock>
     </Box>
   );
