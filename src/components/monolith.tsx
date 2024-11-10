@@ -1,4 +1,11 @@
-import { BodyLong, Box, Heading, Link as StyledLink } from "@navikt/ds-react";
+import {
+  BodyLong,
+  Box,
+  Heading,
+  HStack,
+  Spacer,
+  Link as StyledLink,
+} from "@navikt/ds-react";
 import NextLink from "next/link";
 import { ReactNode } from "react";
 import styles from "./monolith.module.css";
@@ -77,5 +84,31 @@ export const CheckOutLink = ({
     <Link href={href} className={styles.checkout_link}>
       Check out {children}
     </Link>
+  );
+};
+
+export const Quote = ({
+  children,
+  cite,
+}: {
+  children: ReactNode;
+  cite?: string;
+}) => {
+  return (
+    <blockquote
+      cite={cite}
+      style={{
+        borderLeft: "4px solid oklch(0 0 0 / 20%)",
+        paddingInline: "10px 0",
+        marginBlock: "0 10px",
+      }}
+    >
+      {children}
+
+      <HStack>
+        <Spacer />
+        <div style={{ color: "oklch(0 0 0 / 50%)" }}>{cite}</div>
+      </HStack>
+    </blockquote>
   );
 };

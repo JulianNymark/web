@@ -17,7 +17,7 @@ const Render = () => {
         down as I come across them.
       </Text>
       <Text>
-        Along with this list i'll throw in some thoughts and opinions (free of
+        Along with this list I'll throw in some thoughts and opinions (free of
         charge!) Otherwise this just becomes another{" "}
         <Link href="https://en.wikipedia.org/wiki/Listicle">listicle</Link>.
       </Text>
@@ -106,6 +106,11 @@ const Render = () => {
                 currently developing, and generates a Dockerfile{" "}
                 <em>for you</em>. This dockerfile is by no means beholden to
                 deployment on their specific service either.
+              </Text>
+              <Text>
+                In short, "serverless" is in my opinion a great thing, and it
+                lets me think more about the "what" that I want to make, and
+                less about the "how" I want to make it.
               </Text>
               <Text>
                 I think the only way to become a fan is to try it out.
