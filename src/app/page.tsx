@@ -36,6 +36,9 @@ const Footer = () => {
             <Link as={NextLink} href="/confusion">
               huh?
             </Link>
+            <Link as={NextLink} href="https://github.com/JulianNymark/web">
+              source
+            </Link>
           </VStack>
         </Stack>
       </PageBlock>
