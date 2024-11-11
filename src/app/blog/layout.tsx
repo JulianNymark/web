@@ -1,22 +1,28 @@
+import { Link } from "@/components/monolith";
 import { Box } from "@navikt/ds-react";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 import { ReactNode } from "react";
-
-const Footer = () => {
-  return (
-    <Box background="surface-neutral-moderate" padding="8" as="footer">
-      <PageBlock gutters width="lg">
-        Thanks for checking out [website]
-      </PageBlock>
-    </Box>
-  );
-};
 
 const Header = () => {
   return (
     <Box background="surface-neutral-moderate" padding="2" as="header">
       <PageBlock gutters width="lg">
-        Welcome to [website]
+        Back to <Link href="/">[website]</Link>
+      </PageBlock>
+    </Box>
+  );
+};
+
+const Footer = () => {
+  return (
+    <Box background="surface-neutral-moderate" padding="8" as="footer">
+      <PageBlock
+        gutters
+        width="lg"
+        style={{ color: "oklch(0 0 0 / 20%)" }}
+        aria-hidden
+      >
+        a more silent footer.
       </PageBlock>
     </Box>
   );
@@ -25,7 +31,7 @@ const Header = () => {
 const Body = ({ children }: { children: ReactNode }) => {
   return (
     <Box padding="8" paddingBlock="16" as="main">
-      <PageBlock gutters width="lg">
+      <PageBlock gutters width="text">
         {children}
       </PageBlock>
     </Box>

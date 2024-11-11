@@ -1,15 +1,14 @@
-import { CheckOutLink, Squish, Text } from "@/components/monolith";
-import { Accordion, List } from "@navikt/ds-react";
+import { CheckOutLink, Link, Text } from "@/components/monolith";
+import { Accordion, List, VStack } from "@navikt/ds-react";
 import {
   AccordionContent,
   AccordionHeader,
   AccordionItem,
 } from "@navikt/ds-react/Accordion";
-import { Link } from "@/components/monolith";
 
 const Render = () => {
   return (
-    <Squish>
+    <VStack>
       <Text>
         I really want a place to talk about things that make the web (and the
         world) so wonderful! New things keep popping up all the time, and it's
@@ -109,8 +108,8 @@ const Render = () => {
               </Text>
               <Text>
                 In short, "serverless" is in my opinion a great thing, and it
-                lets me think more about the "what" that I want to make, and
-                less about the "how" I want to make it.
+                lets me think more about the <em>"what"</em> that I want to
+                make, and less about the <em>"how"</em> I want to make it.
               </Text>
               <Text>
                 I think the only way to become a fan is to try it out.
@@ -122,7 +121,7 @@ const Render = () => {
           </AccordionItem>
         </Accordion>
       </List>
-    </Squish>
+    </VStack>
   );
 };
 

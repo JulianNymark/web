@@ -30,14 +30,6 @@ export const H2 = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const Squish = ({ children }: { children: ReactNode }) => {
-  return (
-    <div style={{ maxWidth: "55ch", marginBlock: "", marginInline: "auto" }}>
-      {children}
-    </div>
-  );
-};
-
 export const Text = ({
   children,
   ...rest
