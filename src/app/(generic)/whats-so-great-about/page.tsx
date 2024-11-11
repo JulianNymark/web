@@ -40,9 +40,9 @@ const Render = () => {
             <AccordionHeader>Mastodon</AccordionHeader>
             <AccordionContent>
               <Text>
-                The idea behind Mastodon is to contrast with with how
-                "traditional social media" platforms operate. It uses a free and
-                open source protocol called{" "}
+                The idea behind Mastodon is to contrast with how "traditional
+                social media" platforms operate. It uses a free and open source
+                protocol called{" "}
                 <Link href="https://w3c.github.io/activitypub/">
                   ActivityPub
                 </Link>
