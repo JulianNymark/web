@@ -22,6 +22,7 @@ const Render = () => {
           <ListItem>creating music noises (with ableton) 🎶</ListItem>
           <ListItem>listening to music 🔈</ListItem>
           <ListItem>drawing 🎨</ListItem>
+          <ListItem>slightly weird keyboards ⌨️</ListItem>
         </List>
         <Quote cite="You (the reader)">
           So what about non-hobbies? Do you have a list for stuff that might not
