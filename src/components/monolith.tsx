@@ -30,6 +30,16 @@ export const H2 = ({ children }: { children: ReactNode }) => {
   );
 };
 
+export const H3 = ({ children }: { children: ReactNode }) => {
+  return (
+    <Box marginBlock="0 4" asChild>
+      <Heading level="3" size="large">
+        {children}
+      </Heading>
+    </Box>
+  );
+};
+
 export const Text = ({
   children,
   ...rest

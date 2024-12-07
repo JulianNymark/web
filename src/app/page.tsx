@@ -1,5 +1,6 @@
-import { H1, H2, Link, Text } from "@/components/monolith";
-import { Box, Stack, VStack } from "@navikt/ds-react";
+import { H1, H3, Link, Text } from "@/components/monolith";
+import { Box, List, Stack, VStack } from "@navikt/ds-react";
+import { ListItem } from "@navikt/ds-react/List";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 
 const Header = () => {
@@ -67,9 +68,28 @@ const Body = () => {
           <Text>
             There might not be much here right now! But just you wait...
           </Text>
-          <H2>
-            <Link href="/whats-so-great-about">What's so great about...</Link>
-          </H2>
+          <List>
+            <ListItem icon={<div className="emoji-pizzazz">✨</div>}>
+              <H3>
+                <Link href="/whats-so-great-about">
+                  What's so great about...
+                </Link>
+              </H3>
+              <span>
+                Simply an opinionated list of things I think are great!
+              </span>
+            </ListItem>
+            <ListItem icon={<div className="emoji-pizzazz">📚</div>}>
+              <H3>
+                <Link href="https://bookrastinating.com/user/j_man">Books</Link>
+              </H3>
+              <span>
+                List of books, ones I've read, maybe ones I'm currently reading
+                (when I remember to update the list). Ones I think I want to
+                read.
+              </span>
+            </ListItem>
+          </List>
         </VStack>
       </PageBlock>
     </Box>
