@@ -54,9 +54,13 @@ const Body = () => {
         <VStack gap="3">
           <H1>Hello!</H1>
 
+          <Text>My name is Julian Nymark!</Text>
+
+          <Text>Welcome!</Text>
+
           <Text>
-            Welcome! This is one of those personal homepages! (they're still a
-            thing right?)
+            This is one of those personal homepages! (they're still a thing
+            right?)
           </Text>
 
           <s>
