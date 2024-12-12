@@ -4,7 +4,7 @@
 @import "tailwindcss/utilities";
 
 .emoji-pizzazz {
-  margin-top: 14px;
+  margin-top: 18px;
   filter: drop-shadow(0 0 0.1px rgba(255, 255, 255, 1))
     drop-shadow(0 0 0.1px rgba(255, 255, 255, 1))
     drop-shadow(0 0 0.1px rgba(255, 255, 255, 1))
