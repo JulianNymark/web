@@ -1,5 +1,5 @@
 import { CheckOutLink, Link, Text } from "@/components/monolith";
-import { Accordion, Alert, List, VStack } from "@navikt/ds-react";
+import { Accordion, Alert, List } from "@navikt/ds-react";
 import {
   AccordionContent,
   AccordionHeader,
