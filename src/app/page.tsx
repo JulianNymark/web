@@ -1,4 +1,4 @@
-import { H1, H3, Link, Text } from "@/components/monolith";
+import { H1, H3, Link, Strike, Text } from "@/components/monolith";
 import { Box, List, Stack, VStack } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
@@ -39,6 +39,9 @@ const Footer = () => {
             <Link href="https://c.im/@j_man" rel="me">
               Mastodon
             </Link>
+            <Link href="https://bsky.app/profile/julian-n.bsky.social" rel="me">
+              Bluesky
+            </Link>
             <Link href="https://github.com/JulianNymark/web">Source</Link>
           </VStack>
         </Stack>
@@ -50,51 +53,40 @@ const Footer = () => {
 const Body = () => {
   return (
     <Box padding="8" paddingBlock="16" as="main">
-      <PageBlock gutters width="text">
-        <VStack gap="3">
-          <H1>Hello!</H1>
-
-          <Text>My name is Julian Nymark!</Text>
-
-          <Text>Welcome!</Text>
-
+      <PageBlock gutters width="text" className="vspace-between">
+        <H1>Hello!</H1>
+        <Text>My name is Julian Nymark!</Text>
+        <Text>Welcome!</Text>
+        <Text>
+          This is one of those personal homepages! (they're still a thing
+          right?)
+        </Text>
+        <Strike>
           <Text>
-            This is one of those personal homepages! (they're still a thing
-            right?)
+            It's attempted filled, through and thr<b>ough</b>, with stuff that I
+            think you think might be interesting <b>too</b>!
           </Text>
-
-          <s>
-            <Text>
-              It's attempted filled, through and thr<b>ough</b>, with stuff that
-              I think you think might be interesting <b>too</b>!
-            </Text>
-          </s>
-          <Text>
-            There might not be much here right now! But just you wait...
-          </Text>
-          <List>
-            <ListItem icon={<div className="emoji-pizzazz">✨</div>}>
-              <H3>
-                <Link href="/whats-so-great-about">
-                  What's so great about...
-                </Link>
-              </H3>
-              <span>
-                Simply an opinionated list of things I think are great!
-              </span>
-            </ListItem>
-            <ListItem icon={<div className="emoji-pizzazz">📚</div>}>
-              <H3>
-                <Link href="https://bookrastinating.com/user/j_man">Books</Link>
-              </H3>
-              <span>
-                List of books, ones I've read, maybe ones I'm currently reading
-                (when I remember to update the list). Ones I think I want to
-                read.
-              </span>
-            </ListItem>
-          </List>
-        </VStack>
+        </Strike>
+        <Text>
+          There might not be much here right now! But just you wait...
+        </Text>
+        <List>
+          <ListItem icon={<div className="emoji-pizzazz">✨</div>}>
+            <H3>
+              <Link href="/whats-so-great-about">What's so great about...</Link>
+            </H3>
+            <span>Simply an opinionated list of things I think are great!</span>
+          </ListItem>
+          <ListItem icon={<div className="emoji-pizzazz">📚</div>}>
+            <H3>
+              <Link href="https://bookrastinating.com/user/j_man">Books</Link>
+            </H3>
+            <span>
+              List of books, ones I've read, maybe ones I'm currently reading
+              (when I remember to update the list). Ones I think I want to read.
+            </span>
+          </ListItem>
+        </List>
       </PageBlock>
     </Box>
   );

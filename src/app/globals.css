@@ -22,3 +22,9 @@
     drop-shadow(0 0 0.2px rgba(0, 0, 0, 1))
     drop-shadow(0 0 0.2px rgba(0, 0, 0, 1));
 }
+
+.vspace-between {
+  > :not(:last-child) {
+    margin-block: 0 20px;
+  }
+}

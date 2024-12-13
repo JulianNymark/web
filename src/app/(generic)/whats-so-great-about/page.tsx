@@ -1,5 +1,5 @@
 import { CheckOutLink, Link, Text } from "@/components/monolith";
-import { Accordion, List, VStack } from "@navikt/ds-react";
+import { Accordion, Alert, List, VStack } from "@navikt/ds-react";
 import {
   AccordionContent,
   AccordionHeader,
@@ -8,7 +8,7 @@ import {
 
 const Render = () => {
   return (
-    <VStack>
+    <div className="vspace-between">
       <Text>
         I really want a place to talk about things that make the web (and the
         world) so wonderful! New things keep popping up all the time, and it's
@@ -36,8 +36,27 @@ const Render = () => {
       <List title="What's so great about...">
         <Accordion>
           <AccordionItem>
-            <AccordionHeader>Mastodon</AccordionHeader>
-            <AccordionContent>
+            <AccordionHeader>Decentralization in social media</AccordionHeader>
+            <AccordionContent className="vspace-between">
+              <Alert variant="info">
+                <Text>
+                  This section was originally written with a focus on Mastodon,
+                  but since then, decentralization has spread to other major
+                  players such as{" "}
+                  <Link href="https://bsky.social/about/blog/02-22-2024-open-social-web">
+                    when Bluesky decided to decentralize
+                  </Link>
+                  .
+                </Text>
+                <Text>
+                  There are a fair few differences between how Bluesky and
+                  Mastodon work, and i'll refer to the link above if you want to
+                  get more into the specifics. In short: From what I can tell
+                  Mastodon wants to <em>maximize</em> decentralization, whereas
+                  Bluesky wants to retain certain "centralized features" to help
+                  fill the niche left by social media platforms of the past.
+                </Text>
+              </Alert>
               <Text>
                 The idea behind Mastodon is to contrast with how "traditional
                 social media" platforms operate. It uses a free and open source
@@ -86,11 +105,12 @@ const Render = () => {
               <CheckOutLink href="https://joinmastodon.org/">
                 Mastodon
               </CheckOutLink>
+              <CheckOutLink href="https://bsky.app/">Bluesky</CheckOutLink>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem>
             <AccordionHeader>"Serverless"</AccordionHeader>
-            <AccordionContent>
+            <AccordionContent className="vspace-between">
               <Text>
                 Though serverless doesn't mean "no server", and though there has
                 been a lot of hype (maybe too much?) around it. I still think
@@ -121,7 +141,7 @@ const Render = () => {
           </AccordionItem>
         </Accordion>
       </List>
-    </VStack>
+    </div>
   );
 };
 

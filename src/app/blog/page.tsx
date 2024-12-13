@@ -1,10 +1,10 @@
 import { H2, Text } from "@/components/monolith";
-import { Box, List, VStack } from "@navikt/ds-react";
+import { Box, List } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
 
 const Render = () => {
   return (
-    <VStack>
+    <div className="vspace-between">
       <Box
         style={{
           width: "100%",
@@ -59,7 +59,7 @@ const Render = () => {
         </ListItem>
       </List>
       <Text>I'll leave room for future me to make some choices here.</Text>
-    </VStack>
+    </div>
   );
 };
 

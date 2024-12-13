@@ -40,6 +40,10 @@ export const H3 = ({ children }: { children: ReactNode }) => {
   );
 };
 
+export const Strike = ({ children }: { children: ReactNode }) => {
+  return <s style={{ display: "block" }}>{children}</s>;
+};
+
 export const Text = ({
   children,
   ...rest
@@ -49,12 +53,7 @@ export const Text = ({
   [x: string]: any;
 }) => {
   return (
-    <BodyLong
-      style={{
-        marginBlock: "0 20px",
-      }}
-      {...rest}
-    >
+    <BodyLong className={styles.text} {...rest}>
       {children}
     </BodyLong>
   );
