@@ -21,15 +21,22 @@ const Footer = () => {
     <Box background="surface-neutral-moderate" padding="8" as="footer">
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
-          <Box style={{ maxWidth: "80ch", marginBlock: "0 20px" }}>
-            <Text>
-              Thanks for checking out [website]!, assuming that the way most
-              people explore websites is to not look at the footer until the
-              very end of their experience.
+          <Box
+            style={{
+              color: "#333",
+              maxWidth: "80ch",
+              marginBlock: "0 20px",
+            }}
+          >
+            <Text style={{ marginBlock: "0 20px" }}>
+              Thanks for checking out [website]!
+            </Text>
+            <Text style={{ marginBlock: "0 20px" }}>
+              Here is a bunch of links in the footer for a change!
             </Text>
             <Text>
-              I have placed a bunch of links in the footer to ensure this
-              doesn't happen.
+              Could this be the new and improved way to design websites? Primary
+              content first followed by <em>all the other things</em> later?
             </Text>
           </Box>
           <VStack>
