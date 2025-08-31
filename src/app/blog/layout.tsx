@@ -2,12 +2,20 @@ import { Link } from "@/components/monolith";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 import { ReactNode } from "react";
 import { BoxNew } from "@navikt/ds-react/Box";
+import { HStack } from "@navikt/ds-react";
+import { WebsiteSplash } from "@/components/WebsiteSplash";
+import styles from "./styles.module.css";
 
 const Header = () => {
   return (
-    <BoxNew background="neutral-moderate" padding="2" as="header">
+    <BoxNew background="neutral-soft" padding="2" as="header">
       <PageBlock gutters width="lg">
-        Back to <Link href="/">[website]</Link>
+        <HStack align="center">
+          <span>Back to</span>
+          <Link href="/">
+            <WebsiteSplash />
+          </Link>
+        </HStack>
       </PageBlock>
     </BoxNew>
   );
@@ -15,13 +23,8 @@ const Header = () => {
 
 const Footer = () => {
   return (
-    <BoxNew background="neutral-moderate" padding="8" as="footer">
-      <PageBlock
-        gutters
-        width="lg"
-        style={{ color: "oklch(0 0 0 / 20%)" }}
-        aria-hidden
-      >
+    <BoxNew background="neutral-soft" padding="8" as="footer">
+      <PageBlock gutters width="lg" aria-hidden>
         a more silent footer.
       </PageBlock>
     </BoxNew>
@@ -40,7 +43,7 @@ const Body = ({ children }: { children: ReactNode }) => {
 
 const Render = ({ children }: { children: ReactNode }) => {
   return (
-    <Page footer={<Footer />}>
+    <Page className={styles.page} footer={<Footer />}>
       <Header />
       <Body>{children}</Body>
     </Page>

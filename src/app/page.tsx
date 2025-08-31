@@ -1,18 +1,24 @@
 import { H1, H3, Link, Text } from "@/components/monolith";
-import { List, Stack, VStack } from "@navikt/ds-react";
+import { HStack, List, Stack, VStack } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 
 import { BoxNew } from "@navikt/ds-react/Box";
 import styles from "./styles.module.css";
 import { ThemeButton } from "@/components/theme_button";
+import { WebsiteSplash } from "@/components/WebsiteSplash";
 
 const Header = () => {
   return (
     <BoxNew background="neutral-soft" padding="2" as="header">
-      <PageBlock gutters width="lg" className={styles.subtle}>
+      <PageBlock gutters width="lg">
         <Stack justify="space-between">
-          <BoxNew>Welcome to [website]</BoxNew>
+          <BoxNew>
+            <HStack align="center">
+              <span>Welcome to</span>
+              <WebsiteSplash />
+            </HStack>
+          </BoxNew>
           <ThemeButton />
         </Stack>
       </PageBlock>
@@ -22,12 +28,7 @@ const Header = () => {
 
 const Footer = () => {
   return (
-    <BoxNew
-      background="neutral-soft"
-      className={styles.subtle}
-      padding="8"
-      as="footer"
-    >
+    <BoxNew background="neutral-soft" padding="8" as="footer">
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
           <BoxNew
@@ -37,7 +38,10 @@ const Footer = () => {
             }}
           >
             <Text style={{ marginBlock: "0 20px" }}>
-              Thanks for checking out [website]!
+              <HStack align="center">
+                <span>Thanks for checking out</span>
+                <WebsiteSplash />
+              </HStack>
             </Text>
             <Text style={{ marginBlock: "0 20px" }}>
               Here is a bunch of links in the footer for a change!
