@@ -76,12 +76,6 @@ const Body = () => {
           This is one of those personal homepages! (they're still a thing
           right?)
         </Text>
-        <Strike>
-          <Text>
-            It's attempted filled, through and thr<b>ough</b>, with stuff that I
-            think you think might be interesting <b>too</b>!
-          </Text>
-        </Strike>
         <Text>
           There might not be much here right now! But just you wait...
         </Text>
