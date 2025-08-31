@@ -44,7 +44,18 @@ const Render = () => {
           </ListItem>
           <ListItem>
             Rain! 🌧️, when it's raining or snowing, when stuff falls from the
-            sky. That's the most comforting feeling.
+            sky. That's the most comforting feeling. Like a blanket that covers
+            over all sound. When it's raining you get soothing whitenoise, and
+            when it's snowing it becomes eerily quiet, but in a comforting way.
+            I don't think there's anything more zen than hearing just the sound
+            of snow crunching from your own footsteps in a forest when its
+            snowing.
+          </ListItem>
+          <ListItem>
+            The Amazing Digital Circus (also indie animation in general), so far
+            as of episode 6 this show is up there with some of the greatest
+            stuff i've seen! The animation in the pilot was already great, but
+            it just keps getting better! Great fun!
           </ListItem>
         </List>
 
