@@ -4,28 +4,35 @@ import { ListItem } from "@navikt/ds-react/List";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 
 import { BoxNew } from "@navikt/ds-react/Box";
+import styles from "./styles.module.css";
+import { ThemeButton } from "@/components/theme_button";
 
 const Header = () => {
   return (
-    <BoxNew background="bg-neutral-moderate" padding="2" as="header">
-      <PageBlock gutters width="lg">
+    <BoxNew background="neutral-soft" padding="2" as="header">
+      <PageBlock gutters width="lg" className={styles.subtle}>
         <Stack justify="space-between">
           <BoxNew>Welcome to [website]</BoxNew>
           <Stack></Stack>
         </Stack>
       </PageBlock>
+      <ThemeButton />
     </BoxNew>
   );
 };
 
 const Footer = () => {
   return (
-    <BoxNew background="bg-neutral-moderate" padding="8" as="footer">
+    <BoxNew
+      background="neutral-soft"
+      className={styles.subtle}
+      padding="8"
+      as="footer"
+    >
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
           <BoxNew
             style={{
-              color: "#333",
               maxWidth: "80ch",
               marginBlock: "0 20px",
             }}
@@ -103,7 +110,7 @@ const Body = () => {
 
 export default function Render() {
   return (
-    <Page footer={<Footer />}>
+    <Page className={styles.page} footer={<Footer />}>
       <Header />
       <Body />
     </Page>

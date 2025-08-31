@@ -1,4 +1,10 @@
-import { BodyLong, Heading, HStack, Spacer, Link as StyledLink } from "@navikt/ds-react";
+import {
+  BodyLong,
+  Heading,
+  HStack,
+  Spacer,
+  Link as StyledLink,
+} from "@navikt/ds-react";
 import NextLink from "next/link";
 import { ReactNode } from "react";
 import styles from "./monolith.module.css";

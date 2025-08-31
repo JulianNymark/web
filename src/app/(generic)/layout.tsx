@@ -5,7 +5,7 @@ import { BoxNew } from "@navikt/ds-react/Box";
 
 const Header = () => {
   return (
-    <BoxNew background="bg-neutral-moderate" padding="2" as="header">
+    <BoxNew background="neutral-moderate" padding="2" as="header">
       <PageBlock gutters width="lg">
         Back to <Link href="/">[website]</Link>
       </PageBlock>
@@ -15,11 +15,11 @@ const Header = () => {
 
 const Footer = () => {
   return (
-    <BoxNew background="bg-neutral-moderate" padding="8" as="footer">
+    <BoxNew background="neutral-moderate" padding="8" as="footer">
       <PageBlock
         gutters
         width="lg"
-        style={{ color: "oklch(0 0 0 / 20%)" }}
+        style={{ color: "oklch(0 0 0 / 80%)" }}
         aria-hidden
       >
         a more silent footer.
