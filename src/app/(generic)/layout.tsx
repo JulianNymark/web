@@ -10,12 +10,12 @@ const Header = () => {
   return (
     <BoxNew background="neutral-soft" padding="2" as="header">
       <PageBlock gutters width="lg">
-        <HStack align="center">
-          <span>Back to</span>
-          <Link href="/">
+        <Link href="/">
+          <HStack align="center">
+            <span>Back to</span>
             <WebsiteSplash />
-          </Link>
-        </HStack>
+          </HStack>
+        </Link>
       </PageBlock>
     </BoxNew>
   );
