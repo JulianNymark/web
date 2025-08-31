@@ -1,4 +1,4 @@
-import { H1, H3, Link, Strike, Text } from "@/components/monolith";
+import { H1, H3, Link, Text } from "@/components/monolith";
 import { List, Stack, VStack } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
