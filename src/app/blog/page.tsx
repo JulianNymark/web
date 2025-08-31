@@ -1,5 +1,5 @@
 import { H2, Text } from "@/components/monolith";
-import { List } from "@navikt/ds-react";
+import { Heading, List } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
 
 import { BoxNew } from "@navikt/ds-react/Box";
@@ -31,7 +31,8 @@ const Render = () => {
         truly is a world of opportunity out there). On the other hand, storing
         the content in a VCS will also let me time travel!
       </Text>
-      <List title="Points against CMS:">
+      <Heading size="large">Points against CMS:</Heading>
+      <List>
         <ListItem>I'd have to host a CMS... {">"}:( </ListItem>
         <ListItem>
           Another moving piece of machinery! (it <s>could</s> will break at some
@@ -51,7 +52,8 @@ const Render = () => {
           to occasionally rant into the void)
         </ListItem>
       </List>
-      <List title="Points for CMS:">
+      <Heading size="large">Points for CMS:</Heading>
+      <List>
         <ListItem>
           CMSes <em>could</em> be simple!
         </ListItem>

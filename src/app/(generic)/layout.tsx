@@ -2,7 +2,7 @@ import { Link } from "@/components/monolith";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 import { ReactNode } from "react";
 import { BoxNew } from "@navikt/ds-react/Box";
-import { HStack } from "@navikt/ds-react";
+import { BodyShort, HStack } from "@navikt/ds-react";
 import { WebsiteSplash } from "@/components/WebsiteSplash";
 import styles from "../styles.module.css";
 
@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <BoxNew background="neutral-soft" padding="8" as="footer">
       <PageBlock gutters width="lg" aria-hidden>
-        a more silent footer.
+        <BodyShort textColor="subtle">a more silent footer.</BodyShort>
       </PageBlock>
     </BoxNew>
   );
