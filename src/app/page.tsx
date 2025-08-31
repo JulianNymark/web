@@ -13,10 +13,9 @@ const Header = () => {
       <PageBlock gutters width="lg" className={styles.subtle}>
         <Stack justify="space-between">
           <BoxNew>Welcome to [website]</BoxNew>
-          <Stack></Stack>
+          <ThemeButton />
         </Stack>
       </PageBlock>
-      <ThemeButton />
     </BoxNew>
   );
 };
