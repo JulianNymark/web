@@ -1,21 +1,21 @@
 import { Link } from "@/components/monolith";
-import { Box } from "@navikt/ds-react";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 import { ReactNode } from "react";
+import { BoxNew } from "@navikt/ds-react/Box";
 
 const Header = () => {
   return (
-    <Box background="surface-neutral-moderate" padding="2" as="header">
+    <BoxNew background="bg-neutral-moderate" padding="2" as="header">
       <PageBlock gutters width="lg">
         Back to <Link href="/">[website]</Link>
       </PageBlock>
-    </Box>
+    </BoxNew>
   );
 };
 
 const Footer = () => {
   return (
-    <Box background="surface-neutral-moderate" padding="8" as="footer">
+    <BoxNew background="bg-neutral-moderate" padding="8" as="footer">
       <PageBlock
         gutters
         width="lg"
@@ -24,17 +24,17 @@ const Footer = () => {
       >
         a more silent footer.
       </PageBlock>
-    </Box>
+    </BoxNew>
   );
 };
 
 const Body = ({ children }: { children: ReactNode }) => {
   return (
-    <Box padding="8" paddingBlock="16" as="main">
+    <BoxNew padding="8" paddingBlock="16" as="main">
       <PageBlock gutters width="text">
         {children}
       </PageBlock>
-    </Box>
+    </BoxNew>
   );
 };
 

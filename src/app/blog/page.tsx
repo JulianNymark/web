@@ -1,11 +1,13 @@
 import { H2, Text } from "@/components/monolith";
-import { Box, List } from "@navikt/ds-react";
+import { List } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
+
+import { BoxNew } from "@navikt/ds-react/Box";
 
 const Render = () => {
   return (
     <div className="vspace-between">
-      <Box
+      <BoxNew
         style={{
           width: "100%",
           marginInline: "auto",
@@ -15,7 +17,7 @@ const Render = () => {
       >
         <H2>CMS rambling</H2>
         <span>2024-11-10</span>
-      </Box>
+      </BoxNew>
       <Text>
         So my thinking is to maybe have some sort of CMS (probably strapi), and
         then to use that for this blogs content (for starters). Thinking that

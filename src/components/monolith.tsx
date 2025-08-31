@@ -1,42 +1,37 @@
-import {
-  BodyLong,
-  Box,
-  Heading,
-  HStack,
-  Spacer,
-  Link as StyledLink,
-} from "@navikt/ds-react";
+import { BodyLong, Heading, HStack, Spacer, Link as StyledLink } from "@navikt/ds-react";
 import NextLink from "next/link";
 import { ReactNode } from "react";
 import styles from "./monolith.module.css";
 
+import { BoxNew } from "@navikt/ds-react/Box";
+
 export const H1 = ({ children }: { children: ReactNode }) => {
   return (
-    <Box marginBlock="0 4" asChild>
+    <BoxNew marginBlock="0 4" asChild>
       <Heading level="1" size="xlarge">
         {children}
       </Heading>
-    </Box>
+    </BoxNew>
   );
 };
 
 export const H2 = ({ children }: { children: ReactNode }) => {
   return (
-    <Box marginBlock="0 4" asChild>
+    <BoxNew marginBlock="0 4" asChild>
       <Heading level="2" size="large">
         {children}
       </Heading>
-    </Box>
+    </BoxNew>
   );
 };
 
 export const H3 = ({ children }: { children: ReactNode }) => {
   return (
-    <Box marginBlock="0 4" asChild>
+    <BoxNew marginBlock="0 4" asChild>
       <Heading level="3" size="large">
         {children}
       </Heading>
-    </Box>
+    </BoxNew>
   );
 };
 

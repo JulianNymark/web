@@ -1,11 +1,13 @@
 import { H1, Quote, Text } from "@/components/monolith";
-import { Box, List, VStack } from "@navikt/ds-react";
+import { List, VStack } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
+
+import { BoxNew } from "@navikt/ds-react/Box";
 
 const Render = () => {
   return (
     <VStack gap="20">
-      <Box>
+      <BoxNew>
         <H1>About me in general</H1>
         <Text>
           Not sure what to put here, but I do stuff! I have some hobbies! Here's
@@ -47,7 +49,7 @@ const Render = () => {
         </List>
 
         <Text>Now you should have a pretty complete picture of who I am!</Text>
-      </Box>
+      </BoxNew>
     </VStack>
   );
 };

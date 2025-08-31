@@ -1,27 +1,29 @@
 import { H1, H3, Link, Strike, Text } from "@/components/monolith";
-import { Box, List, Stack, VStack } from "@navikt/ds-react";
+import { List, Stack, VStack } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 
+import { BoxNew } from "@navikt/ds-react/Box";
+
 const Header = () => {
   return (
-    <Box background="surface-neutral-moderate" padding="2" as="header">
+    <BoxNew background="bg-neutral-moderate" padding="2" as="header">
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
-          <Box>Welcome to [website]</Box>
+          <BoxNew>Welcome to [website]</BoxNew>
           <Stack></Stack>
         </Stack>
       </PageBlock>
-    </Box>
+    </BoxNew>
   );
 };
 
 const Footer = () => {
   return (
-    <Box background="surface-neutral-moderate" padding="8" as="footer">
+    <BoxNew background="bg-neutral-moderate" padding="8" as="footer">
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
-          <Box
+          <BoxNew
             style={{
               color: "#333",
               maxWidth: "80ch",
@@ -38,7 +40,7 @@ const Footer = () => {
               Could this be the new and improved way to design websites? Primary
               content first followed by <em>all the other things</em> later?
             </Text>
-          </Box>
+          </BoxNew>
           <VStack>
             <Link href="/blog">Blog</Link>
             <Link href="/contact">Contact</Link>
@@ -53,13 +55,13 @@ const Footer = () => {
           </VStack>
         </Stack>
       </PageBlock>
-    </Box>
+    </BoxNew>
   );
 };
 
 const Body = () => {
   return (
-    <Box padding="8" paddingBlock="16" as="main">
+    <BoxNew padding="8" paddingBlock="16" as="main">
       <PageBlock gutters width="text" className="vspace-between">
         <H1>Hello!</H1>
         <Text>My name is Julian Nymark!</Text>
@@ -95,7 +97,7 @@ const Body = () => {
           </ListItem>
         </List>
       </PageBlock>
-    </Box>
+    </BoxNew>
   );
 };
 
