@@ -166,7 +166,7 @@ const Render = () => {
       <Box marginBlock="space-16">
         <Accordion>
           <Solution
-            title="More privacy respecting phone"
+            title="Phone"
             subtitle="Android / iOS replacement"
             status="completed"
             statusLabel="GrapheneOS"
@@ -194,7 +194,7 @@ const Render = () => {
           </Solution>
 
           <Solution
-            title="Music Streaming"
+            title="Music"
             subtitle="Spotify / YouTube Music replacement"
             status="completed"
             statusLabel="Navidrome"
