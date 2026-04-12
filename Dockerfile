@@ -14,8 +14,8 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
-# Enable Corepack so pnpm (declared in packageManager field) is available
-RUN corepack enable
+# Install pnpm directly via npm (avoids corepack key rotation issues)
+RUN npm install -g pnpm@10.33.0
 
 
 # ---- Build stage ----
