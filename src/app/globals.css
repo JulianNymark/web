@@ -1,5 +1,5 @@
+@import "@navikt/ds-css";
 @import "tailwindcss/base";
-@import "@navikt/ds-css/darkside";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
@@ -27,4 +27,16 @@
   > :not(:last-child) {
     margin-block: 0 20px;
   }
+}
+
+/* Tailwind preflight sets svg { display: block } which overrides aksel's
+   display:none on the filled help-text icon. Restore the expected behaviour. */
+.aksel-help-text__icon--filled {
+  display: none;
+}
+.aksel-help-text__button:where(:hover, :focus-visible, [aria-expanded="true"]) > .aksel-help-text__icon {
+  display: none;
+}
+.aksel-help-text__button:where(:hover, :focus-visible, [aria-expanded="true"]) > .aksel-help-text__icon--filled {
+  display: block;
 }

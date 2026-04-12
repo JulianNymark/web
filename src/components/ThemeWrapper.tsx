@@ -1,24 +1,16 @@
-//// ThemeWrapper.tsx ////
 "use client";
 
-import { Theme } from "@navikt/ds-react";
-import { useTheme } from "next-themes";
-import { ReactNode, useEffect, useState } from "react";
+import { useTheme } from "@/components/theme";
+import { ReactNode, useEffect } from "react";
 
 export const ThemeWrapper = ({ children }: { children: ReactNode }) => {
   const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    const html = document.documentElement;
+    html.classList.remove("light", "dark");
+    html.classList.add(resolvedTheme);
+  }, [resolvedTheme]);
 
-  // Don't render Theme component until mounted to avoid hydration mismatch
-  if (!mounted) {
-    // Return placeholder with same structure but no theme
-    return <div style={{ visibility: "hidden" }}>{children}</div>;
-  }
-
-  const navTheme = resolvedTheme === "dark" ? "dark" : "light";
-  return <Theme theme={navTheme}>{children}</Theme>;
+  return <>{children}</>;
 };

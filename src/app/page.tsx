@@ -1,43 +1,42 @@
 import { H1, H3, Link, Text } from "@/components/monolith";
-import { HStack, List, Stack, VStack } from "@navikt/ds-react";
+import { HStack, List, Stack, VStack, Box } from "@navikt/ds-react";
 import { ListItem } from "@navikt/ds-react/List";
 import { Page, PageBlock } from "@navikt/ds-react/Page";
 
-import { BoxNew } from "@navikt/ds-react/Box";
 import styles from "./styles.module.css";
 import { ThemeButton } from "@/components/theme_button";
 import { WebsiteSplash } from "@/components/WebsiteSplash";
 
 const Header = () => {
   return (
-    <BoxNew background="neutral-soft" padding="2" as="header">
+    <Box background="neutral-soft" padding="space-8" as="header">
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
-          <BoxNew>
+          <Box>
             <HStack align="center">
               <span>Welcome to</span>
               <WebsiteSplash />
             </HStack>
-          </BoxNew>
+          </Box>
           <ThemeButton />
         </Stack>
       </PageBlock>
-    </BoxNew>
+    </Box>
   );
 };
 
 const Footer = () => {
   return (
-    <BoxNew background="neutral-soft" padding="8" as="footer">
+    <Box background="neutral-soft" padding="space-32" as="footer">
       <PageBlock gutters width="lg">
         <Stack justify="space-between">
-          <BoxNew
+          <Box
             style={{
               maxWidth: "80ch",
               marginBlock: "0 20px",
             }}
           >
-            <Text style={{ marginBlock: "0 20px" }}>
+            <Text as="div" style={{ marginBlock: "0 20px" }}>
               <HStack align="center">
                 <span>Thanks for checking out</span>
                 <WebsiteSplash />
@@ -50,7 +49,7 @@ const Footer = () => {
               Could this be the new and improved way to design websites? Primary
               content first followed by <em>all the other things</em> later?
             </Text>
-          </BoxNew>
+          </Box>
           <VStack>
             <Link href="/blog">Blog</Link>
             <Link href="/contact">Contact</Link>
@@ -65,13 +64,13 @@ const Footer = () => {
           </VStack>
         </Stack>
       </PageBlock>
-    </BoxNew>
+    </Box>
   );
 };
 
 const Body = () => {
   return (
-    <BoxNew padding="8" paddingBlock="16" as="main">
+    <Box padding="space-32" paddingBlock="space-64" as="main">
       <PageBlock gutters width="text" className="vspace-between">
         <H1>Hello!</H1>
         <Text>My name is Julian Nymark!</Text>
@@ -80,28 +79,41 @@ const Body = () => {
           This is one of those personal homepages! (they're still a thing
           right?)
         </Text>
-        <Text>
-          There might not be much here right now! But just you wait...
-        </Text>
-        <List>
-          <ListItem icon={<div className="emoji-pizzazz">✨</div>}>
-            <H3>
-              <Link href="/whats-so-great-about">What's so great about...</Link>
-            </H3>
-            <span>Simply an opinionated list of things I think are great!</span>
-          </ListItem>
-          <ListItem icon={<div className="emoji-pizzazz">📚</div>}>
-            <H3>
-              <Link href="https://bookrastinating.com/user/j_man">Books</Link>
-            </H3>
-            <span>
-              List of books, ones I've read, maybe ones I'm currently reading
-              (when I remember to update the list). Ones I think I want to read.
-            </span>
-          </ListItem>
-        </List>
+        <Box marginBlock="space-16" asChild>
+          <List data-aksel-migrated-v8>
+            <ListItem icon={<div className="emoji-pizzazz">✨</div>}>
+              <H3>
+                <Link href="/whats-so-great-about">
+                  What's so great about...
+                </Link>
+              </H3>
+              <span>
+                Simply an opinionated list of things I think are great!
+              </span>
+            </ListItem>
+            <ListItem icon={<div className="emoji-pizzazz">🧘</div>}>
+              <H3>
+                <Link href="/technology-and-sanity">Technology + Sanity</Link>
+              </H3>
+              <span>
+                An attempt at documenting <em>technology stuff</em> that lowers
+                cortisol
+              </span>
+            </ListItem>
+            <ListItem icon={<div className="emoji-pizzazz">📚</div>}>
+              <H3>
+                <Link href="https://bookrastinating.com/user/j_man">Books</Link>
+              </H3>
+              <span>
+                List of books, ones I've read, maybe ones I'm currently reading
+                (when I remember to update the list). Ones I think I want to
+                read.
+              </span>
+            </ListItem>
+          </List>
+        </Box>
       </PageBlock>
-    </BoxNew>
+    </Box>
   );
 };
 

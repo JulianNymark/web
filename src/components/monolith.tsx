@@ -1,43 +1,74 @@
+"use client";
+
+import { CheckmarkCircleFillIcon, HourglassIcon } from "@navikt/aksel-icons";
 import {
   BodyLong,
   Heading,
   HStack,
   Spacer,
   Link as StyledLink,
+  VStack,
 } from "@navikt/ds-react";
+import {
+  Accordion as ForkedAccordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionContent,
+} from "./accordion";
 import NextLink from "next/link";
 import { ReactNode } from "react";
 import styles from "./monolith.module.css";
 
-import { BoxNew } from "@navikt/ds-react/Box";
+import { Box } from "@navikt/ds-react/Box";
+
+function AccordionRoot({ children, ...rest }: { children: ReactNode; [x: string]: any }) {
+  return (
+    <Box
+      padding="space-24"
+      background="neutral-soft"
+      borderRadius="12"
+    >
+      <ForkedAccordion {...rest}>
+        {children}
+      </ForkedAccordion>
+    </Box>
+  );
+}
+
+AccordionRoot.Item = AccordionItem;
+AccordionRoot.Header = AccordionHeader;
+AccordionRoot.Content = AccordionContent;
+
+export { AccordionRoot as Accordion };
+export { AccordionItem, AccordionHeader, AccordionContent };
 
 export const H1 = ({ children }: { children: ReactNode }) => {
   return (
-    <BoxNew marginBlock="0 4" asChild>
-      <Heading level="1" size="xlarge">
+    <Box marginBlock="space-0 space-16" asChild>
+      <Heading level="1" size="xlarge" className={styles.h1}>
         {children}
       </Heading>
-    </BoxNew>
+    </Box>
   );
 };
 
 export const H2 = ({ children }: { children: ReactNode }) => {
   return (
-    <BoxNew marginBlock="0 4" asChild>
-      <Heading level="2" size="large">
+    <Box marginBlock="space-0 space-16" asChild>
+      <Heading level="2" size="large" className={styles.h2}>
         {children}
       </Heading>
-    </BoxNew>
+    </Box>
   );
 };
 
 export const H3 = ({ children }: { children: ReactNode }) => {
   return (
-    <BoxNew marginBlock="0 4" asChild>
-      <Heading level="3" size="large">
+    <Box marginBlock="space-0 space-16" asChild>
+      <Heading level="3" size="large" className={styles.h3}>
         {children}
       </Heading>
-    </BoxNew>
+    </Box>
   );
 };
 
@@ -62,14 +93,16 @@ export const Text = ({
 
 export const Link = ({
   children,
+  href,
   ...rest
 }: {
   children: ReactNode;
+  href: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [x: string]: any;
 }) => {
   return (
-    <StyledLink as={NextLink} {...rest}>
+    <StyledLink as={NextLink} href={href} className={styles.link} {...rest}>
       {children}
     </StyledLink>
   );
@@ -83,9 +116,103 @@ export const CheckOutLink = ({
   href: string;
 }) => {
   return (
-    <Link href={href} className={styles.checkout_link}>
+    <Box
+      as={Link}
+      href={href}
+      className={styles.checkout_link}
+      paddingInline="space-20"
+      paddingBlock="space-12"
+      borderWidth="1"
+      borderRadius="12"
+    >
       Check out {children}
-    </Link>
+    </Box>
+  );
+};
+
+export const Solution = ({
+  title,
+  subtitle,
+  status,
+  statusLabel,
+  children,
+  links,
+  defaultOpen = false,
+}: {
+  title: string;
+  subtitle: string;
+  status: "completed" | "planned";
+  statusLabel: string;
+  children?: ReactNode;
+  links?: { href: string; label: string }[];
+  defaultOpen?: boolean;
+}) => {
+  const isCompleted = status === "completed";
+  const hasContent = !!(children || (links && links.length > 0));
+
+  const SolutionHeader = (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        flexGrow: 1,
+        width: "100%",
+        gap: "var(--ax-space-16)",
+      }}
+    >
+      <Box style={{ flexGrow: 1, textAlign: "left" }}>
+        <Text as="strong">{title}</Text>
+        <Text size="small" style={{ color: "var(--ax-text-subtle)" }}>
+          {subtitle}
+        </Text>
+      </Box>
+      <HStack
+        align="center"
+        gap="space-4"
+        style={{
+          flexShrink: 0,
+          color: isCompleted
+            ? "var(--ax-bg-success-strong)"
+            : "var(--ax-bg-warning-strong)",
+        }}
+      >
+        <Text
+          as="span"
+          style={{
+            fontStyle: isCompleted ? "normal" : "italic",
+            opacity: isCompleted ? 1 : 0.7,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {statusLabel}
+        </Text>
+        {isCompleted ? (
+          <CheckmarkCircleFillIcon title="Completed" fontSize="1.5rem" />
+        ) : (
+          <HourglassIcon title="Planned" fontSize="1.5rem" />
+        )}
+      </HStack>
+    </div>
+  );
+
+  return (
+    <AccordionItem defaultOpen={defaultOpen}>
+      <AccordionHeader className={styles.solution_header_span}>
+        {SolutionHeader}
+      </AccordionHeader>
+      <AccordionContent>
+        {children || (!isCompleted && <Text italic>Searching for a good solution...</Text>)}
+        {links && links.length > 0 && (
+          <HStack gap="space-16" marginBlock="space-12 space-0">
+            {links.map((link) => (
+              <CheckOutLink key={link.href} href={link.href}>
+                {link.label}
+              </CheckOutLink>
+            ))}
+          </HStack>
+        )}
+      </AccordionContent>
+    </AccordionItem>
   );
 };
 

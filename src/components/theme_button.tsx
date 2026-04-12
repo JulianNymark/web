@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "next-themes";
+import { useTheme } from "@/components/theme";
 import { useEffect, useState } from "react";
 import { ThemeIcon } from "@navikt/aksel-icons";
 import { Button, Tooltip } from "@navikt/ds-react";
@@ -13,14 +13,12 @@ function ThemeButton() {
     setMounted(true);
   }, []);
 
-  // Don't render until mounted to avoid hydration mismatch
   if (!mounted) {
-    // Return button without dynamic content
     return (
       <Button
         variant="tertiary-neutral"
         icon={<ThemeIcon aria-hidden />}
-        aria-label="Endre tema" // Static label during SSR
+        aria-label="Endre tema"
       />
     );
   }
@@ -28,9 +26,7 @@ function ThemeButton() {
   return (
     <Tooltip
       content={
-        resolvedTheme === "dark"
-          ? "Endre til lyst tema"
-          : "Endre til mørkt tema"
+        resolvedTheme === "dark" ? "Endre til lyst tema" : "Endre til mørkt tema"
       }
     >
       <Button
@@ -38,9 +34,7 @@ function ThemeButton() {
         icon={<ThemeIcon aria-hidden />}
         onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
         aria-label={
-          resolvedTheme === "dark"
-            ? "Endre til lyst tema"
-            : "Endre til mørkt tema"
+          resolvedTheme === "dark" ? "Endre til lyst tema" : "Endre til mørkt tema"
         }
       />
     </Tooltip>
