@@ -31,7 +31,7 @@ const Footer = () => {
   );
 };
 
-const Body = ({ children }: { children: ReactNode }) => {
+const Body = ({ children }) => {
   return (
     <BoxNew padding="8" paddingBlock="16" as="main">
       <PageBlock gutters width="text">
